@@ -102,12 +102,14 @@ Actualizar un tópico (PUT)
 
 <img width="1341" height="543" alt="image" src="https://github.com/user-attachments/assets/fa8e1674-20cb-4dea-92c3-12fa27d75af0" />
 
-Desactivar un tópico
+Desactivar un tópico(DEL)
+-------------------------
 Esta función sólo cambia el estado status del tópico a desactivado
 
 <img width="1194" height="221" alt="image" src="https://github.com/user-attachments/assets/09e2c3a5-3e42-4394-82f4-3ca81922ec63" />
 
-Eliminar un tópico
+Eliminar un tópico (DEL)
+------------------------
 Esta función borra el tópico de la base de datos
 
 <img width="1344" height="298" alt="image" src="https://github.com/user-attachments/assets/86c93816-bc4a-4621-86ea-aa810ee40271" />
