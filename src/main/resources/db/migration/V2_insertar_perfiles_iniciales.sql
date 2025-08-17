@@ -1,0 +1,1 @@
+INSERT INTO perfil (nombre) VALUES ('persona'), ('administrador');
