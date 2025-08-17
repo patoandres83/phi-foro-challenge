@@ -15,6 +15,12 @@ Este proyecto se trata de la implementación de un foro, el cual está construid
 * lombok
 * com.auth0
 
+
+Descripción de las funcionalidades del proyecto
+-----------------------------------------------
+La idea principal es crear un foro, el cual sea capaz de generar end points que permitan realizar las operaciones CRUD sobre los tópicos, validando a los usuario y un token generado al momento de realizar el login.
+
+
 La base de datos del proyecto
 -----------------------------
 
@@ -43,6 +49,77 @@ Tabla "usuario"
 Tabla "usuario_perfil"
 
 <img width="562" height="196" alt="image" src="https://github.com/user-attachments/assets/22643121-7b83-419c-aad5-b00d439d2688" />
+
+<strong>Nota: </strong>Se utiliza sólamente por extensión del proyecto la tabla usuario, usuario_perfil y topico.
+
+Descripción de los endpoints
+----------------------------
+
+
+AuthController.java******************************************
+
+Realizar login en la API (POST)
+------------------------
+/api/auth/login
+
+<img width="1343" height="286" alt="image" src="https://github.com/user-attachments/assets/a57db565-65a1-4da0-a7b3-0445ebbe4d56" />
+
+Si un usuario no se encuentra validado o el token está expirado (expira en 1800 seg), la API muestra el siguiente error
+
+<img width="1115" height="211" alt="image" src="https://github.com/user-attachments/assets/098c7b04-934a-4abb-a3ae-5a278eeec5b8" />
+
+
+TopicoController.java***************************************
+
+Crear un tópico (POST)
+---------------
+/api/topicos
+
+<img width="1346" height="522" alt="image" src="https://github.com/user-attachments/assets/c1950821-b5de-43fe-a44c-e231444431b2" />
+
+Listar todos los tópicos (GET)
+------------------------
+
+<img width="1346" height="644" alt="image" src="https://github.com/user-attachments/assets/6b77c27b-0ced-43f8-9299-31680f0fa612" />
+
+Buscar tópico por id (GET)
+--------------------
+
+Buscar un tópico por id, valida si el id es un integer, caso contrario muestra el siguiente error:
+
+<img width="1345" height="304" alt="image" src="https://github.com/user-attachments/assets/70ddb0f5-dedd-4420-a8b2-269b7ad6acad" />
+
+Si la búsqueda es exitosa muestra el siguiente mensaje:
+
+<img width="1338" height="558" alt="image" src="https://github.com/user-attachments/assets/8f99ae18-30f9-46a3-93e7-ceee418f379d" />
+
+Si no encuentra el id buscado:
+
+<img width="1347" height="289" alt="image" src="https://github.com/user-attachments/assets/34271ebe-33fd-428f-b103-55d598d3a789" />
+
+Actualizar un tópico (PUT)
+--------------------------
+
+<img width="1341" height="543" alt="image" src="https://github.com/user-attachments/assets/fa8e1674-20cb-4dea-92c3-12fa27d75af0" />
+
+Desactivar un tópico
+Esta función sólo cambia el estado status del tópico a desactivado
+
+<img width="1194" height="221" alt="image" src="https://github.com/user-attachments/assets/09e2c3a5-3e42-4394-82f4-3ca81922ec63" />
+
+Eliminar un tópico
+Esta función borra el tópico de la base de datos
+
+<img width="1344" height="298" alt="image" src="https://github.com/user-attachments/assets/86c93816-bc4a-4621-86ea-aa810ee40271" />
+
+
+
+
+
+
+
+
+
 
 
 
