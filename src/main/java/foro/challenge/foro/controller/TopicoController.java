@@ -9,7 +9,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/topicos")
@@ -54,16 +56,22 @@ public class TopicoController {
     // eliminar un tópico (desactivar)(perfil administrador)
     @PreAuthorize("hasAuthority('administrador')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> desactivar(@PathVariable Long id) {
+    public ResponseEntity<Map<String, String>> desactivar(@PathVariable Long id) {
         topicoService.desactivar(id);
-        return ResponseEntity.noContent().build();
+        //return ResponseEntity.noContent().build();
+        Map<String, String> response = new HashMap<>();
+        response.put("mensaje", "registro desactivado correctamente");
+        return ResponseEntity.ok(response);
     }
 
     @PreAuthorize("hasAuthority('administrador')") // Typically, only admins should hard delete
     @DeleteMapping("/eliminar/{id}") // Use @DeleteMapping
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Map<String, String>> eliminar(@PathVariable Long id) {
         topicoService.eliminar(id);
-        return ResponseEntity.noContent().build(); // Return 204 No Content for successful deletion
+        //return ResponseEntity.noContent().build(); // Return 204 No Content for successful deletion
+        Map<String, String> response = new HashMap<>();
+        response.put("mensaje", "registro eliminado correctamente");
+        return ResponseEntity.ok(response);
     }
 
 }
