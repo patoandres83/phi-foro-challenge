@@ -115,6 +115,24 @@ Esta función borra el tópico de la base de datos
 <img width="1344" height="298" alt="image" src="https://github.com/user-attachments/assets/86c93816-bc4a-4621-86ea-aa810ee40271" />
 
 
+--------------------------
+La estructura del proyecto
+--------------------------
+
+El proyecto se estructura en los siguientes paquetes para su mejor orden y compresión
+
+<img width="346" height="575" alt="image" src="https://github.com/user-attachments/assets/746aa4e4-337f-445a-b5a0-0d565dcfd633" />
+
+------------------------------------
+Principales dificultades encontradas
+------------------------------------
+
+Al realizar este desafío se encontraron las siguientes dificultades:
+
+* Problemas en la migración de la base de datos, no se interpretaron correctamente las dependencias de las claves foráneas en la tabla usuario y usuario_perfil, por lo que se utilizó la consola de intellij para poder actualizar manualmente las tablas y el sistema aceptara el ingreso por credenciales y perfil.
+* Al generar las contraseñas por algoritmo Bcrypt, hubo errores en reconocer al usuario administrador, ya que las contraseñas no coincidían y no se podía generar el token de login y por ende acceder a las funcionalidades de la API. Es por ello que se tuvieron que imprimir las contraseñas por consola de intellij para poder compararlas (las líneas ahora se encuentran comentadas en los archivos del proyecto)
+
+
 
 
 
